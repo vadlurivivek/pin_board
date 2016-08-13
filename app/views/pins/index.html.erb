@@ -1,1 +1,6 @@
-<h1>this is</h1>
+<h1>PIN INTREST</h1>
+<%=link_to "New Pin", new_pin_path %>
+<%@pins.each do |pin|%>
+	<p><%= link_to pin.title, pin%></p>
+
+<% end %>
