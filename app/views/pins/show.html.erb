@@ -1,4 +1,7 @@
 <h1><%=@pin.title %></h1>
 <p><%= @pin.description %></p>
+<p>submitted by</p>
+<p><%= @pin.user.email %></p>
 <%= link_to "Back",root_path %>
 <%= link_to "Edit",edit_pin_path %>
+<%= link_to 'Delete',  @pin,  method: :delete, data: { confirm: 'Are you sure?' } %>

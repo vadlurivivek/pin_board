@@ -33,6 +33,11 @@ class PinsController < ApplicationController
 			render 'edit'## render always looks for methods not pages it can also look for pages
 		end
 	end
+	def destroy
+		@pin = Pin.find(params[:id])
+		@pin.destroy
+		redirect_to root_path
+	end
 
 	private
 		def pin_params
