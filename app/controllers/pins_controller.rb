@@ -38,6 +38,11 @@ class PinsController < ApplicationController
 		@pin.destroy
 		redirect_to root_path
 	end
+	def upvote
+		@pin = Pin.find(params[:id])
+		@pin.upvote_by current_user
+		redirect_to :back
+	end
 
 	private
 		def pin_params
